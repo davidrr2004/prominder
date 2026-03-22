@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-outfit);
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-tertiary: hsl(var(--tertiary));
+  --color-tertiary-foreground: hsl(var(--tertiary-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+}
+
+:root {
+  --background: 55 21% 92%;
+  --foreground: 160 12% 18%;
+  --card: 0 0% 100%;
+  --card-foreground: 160 12% 18%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 160 12% 18%;
+  --primary: 160 23% 25%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 160 14% 35%;
+  --secondary-foreground: 0 0% 100%;
+  --tertiary: 75 60% 48%;
+  --tertiary-foreground: 0 0% 100%;
+  --accent: 30 60% 55%;
+  --accent-foreground: 0 0% 100%;
+  --muted: 55 15% 80%;
+  --muted-foreground: 160 10% 45%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 55 18% 88%;
+  --input: 0 0% 100%;
+  --ring: 160 23% 25%;
+  --radius: 0.75rem;
+  --label-light: 160 8% 62%;
+  --text-description: 160 12% 40%;
+  --button-highlight: 0 0% 100%;
+  --highlight-error: 0 64% 46%;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased font-sans;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    @apply font-bold tracking-tight text-foreground;
+  }
+}
+
+/* Neumorphic shadow utilities */
+.shadow-neumorphic {
+  box-shadow: 
+    4px 4px 8px rgba(0, 0, 0, 0.10),
+    -4px -4px 8px rgb(255, 255, 253);
+}
+
+.shadow-neumorphic-lg {
+  box-shadow: 
+    8px 8px 16px rgba(0, 0, 0, 0.15),
+    -4px -4px 12px rgb(255, 255, 253);
+}
+
+.shadow-neumorphic-inset {
+  box-shadow: 
+    inset 4px 4px 8px rgba(0, 0, 0, 0.08),
+    inset -4px -4px 8px rgb(255, 255, 253);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased font-sans selection:bg-primary/30 selection:text-primary-foreground;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    @apply font-bold tracking-tight text-foreground;
+  }
+}
+
+/* Hidden visual scrollbar, scrolling still works */
+.demo-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.demo-scrollbar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Main content gets a richer neumorphic rail and thumb */
+#main-scroll-area {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+#main-scroll-area::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Generic utility for hidden scrollbars */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
